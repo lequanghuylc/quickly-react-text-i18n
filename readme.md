@@ -1,5 +1,11 @@
 
-### End Product looks like
+### Install
+
+```
+yarn add quickly-react-text-i18n
+```
+
+### Usage
 
 ```tsx
 
@@ -43,7 +49,7 @@ Comming soon
 
 ### Road maps
 
-- [] Nice & friendly interface to update translations
+- [ ] Nice & friendly interface to update translations
 - [x] Has the option to download as local data
 - [x] Change language and update real-time via Iframe
 
