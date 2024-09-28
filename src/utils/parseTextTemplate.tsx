@@ -58,8 +58,11 @@ export const parseTranslationKey = (userContent: TUserContent) : { key: TUserCon
   }
   const inputIndex : IInputIndex = {};
   let allInputs : Array<string | TReactObject> = [];
-  if (!userContent || !userContent.slice) return {
-    key: userContent, inputs: [],
+  if (!userContent || !userContent.slice) {
+    console.warn('invalid data type', `Objects are not valid as a React child (found: ${userContent}). "..." string will be used instead.`);
+    return {
+      key: '...', inputs: [],
+    }
   };
   const resultContent = userContent.slice();
   resultContent.forEach((val, valIndex) => {
