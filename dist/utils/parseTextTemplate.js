@@ -49,6 +49,12 @@ var parseTranslationKey = function (userContent) {
     }
     var inputIndex = {};
     var allInputs = [];
+    if (!userContent || !userContent.slice) {
+        console.warn('invalid data type', `Objects are not valid as a React child (found: ${userContent}). "..." string will be used instead.`);
+        return {
+          key: '...', inputs: [],
+        }
+    };
     var resultContent = userContent.slice();
     resultContent.forEach(function (val, valIndex) {
         if (val === null || val === undefined)
