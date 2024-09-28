@@ -58,6 +58,9 @@ export const parseTranslationKey = (userContent: TUserContent) : { key: TUserCon
   }
   const inputIndex : IInputIndex = {};
   let allInputs : Array<string | TReactObject> = [];
+  if (!userContent || !userContent.slice) return {
+    key: userContent, inputs: [],
+  };
   const resultContent = userContent.slice();
   resultContent.forEach((val, valIndex) => {
     if (typeof val === 'string') {
